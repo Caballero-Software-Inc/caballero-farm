@@ -27,14 +27,14 @@ const l = (list) => {
 
 
 // eslint-disable-next-line no-unused-vars
-const welcomePage = () => {
+const welcomePageFarm = () => {
 
   return (
     <div style={{
       height: `450px`,
       overflow: "scroll",
       color: `yellow`
-    }} key="welcomePage">
+    }} key="welcomePageFarm">
 
       <h3 style={{
         color: `red`
@@ -49,9 +49,6 @@ const welcomePage = () => {
       <h2>
         {l([`Register or log in to access your giveaway.`, `Inscrivez-vous ou connectez-vous pour accéder à votre cadeau.`])}
       </h2>
-
-
-
       
     </div>
   )
@@ -95,7 +92,7 @@ const languagePage = () => {
 
 function App() {
   if (localStorage.getItem('caballeroPageFarm') == null) {
-    localStorage.setItem('caballeroPageFarm', 'welcomePage()')
+    localStorage.setItem('caballeroPageFarm', 'welcomePageFarm()')
   }
 
 
@@ -119,9 +116,9 @@ function App() {
 
   
 
-  const headOfPages = () => {
+  const headOfPagesFarm = () => {
     return (
-      <table style={{ width: `100%` }} key="headOfPages">
+      <table style={{ width: `100%` }} key="headOfPagesFarm">
         <tbody>
           <tr>
 
@@ -132,7 +129,7 @@ function App() {
                 marginLeft: `10px`
               }} alt="logo" src={logo} className="Main-logo" key="logo"
                 onClick={() => {
-                  localStorage.setItem('caballeroPageFarm', 'welcomePage()');
+                  localStorage.setItem('caballeroPageFarm', 'welcomePageFarm()');
                   update()
                 }}
               />
@@ -168,7 +165,7 @@ function App() {
   return (
     <div className="App" key="app">
 
-      {headOfPages()}
+      {headOfPagesFarm()}
 
       {jsx}
 
