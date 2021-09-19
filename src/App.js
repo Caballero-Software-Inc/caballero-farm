@@ -72,7 +72,7 @@ const languagePage = () => {
       <button className="Lang-button" key="EnglishLang"
       onClick={() => {
         localStorage.setItem('caballeroLang', '0');
-        window.location.reload(false);    
+        window.location = window.location.protocol + '//' + window.location.host + window.location.pathname + '?lang=0&name=' + name;
       }}>
         English
       </button>
@@ -83,7 +83,7 @@ const languagePage = () => {
       <button className="Lang-button" key="frenchLang"
       onClick={() => {
         localStorage.setItem('caballeroLang', '1');
-        window.location.reload(false);
+        window.location = window.location.protocol + '//' + window.location.host + window.location.pathname + '?lang=1&name=' + name;
       }}>
         Français
       </button>
@@ -99,12 +99,8 @@ function App() {
   }
 
 
-  if ( (localStorage.getItem('caballeroLang')) === null ) {
-    localStorage.setItem('caballeroLang', lang);
-  }
+  localStorage.setItem('caballeroLang', lang)
 
-  
-  
   switch (localStorage.getItem('caballeroLang')) {
     case '1':
       document.getElementById("html").lang = 'fr';
